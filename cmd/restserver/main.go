@@ -63,7 +63,6 @@ func main() {
 
 	leStudentDAO.Dbms = *bdd
 
-	//Languages
 	leLanguageDAO := new(persistence.LanguageDAOBolt)
 
 	language1 := entities.NewLanguage("js", "JavaScript")
@@ -83,7 +82,6 @@ func main() {
 
 	leLanguageDAO.Dbms = *bdd
 
-	//Handlers
 	studentsHandlers := new(StudentsHandlers)
 	studentsHandlers.DAO = leStudentDAO
 	studentsHandlers.InitializeStudentsRoutes(r)
