@@ -34,7 +34,7 @@ import (
 func main() {
 	r := mux.NewRouter()
 
-	bdd := new(persistence.BoltDbb)
+	/*bdd := new(persistence.BoltDbb)
 
 	bdd.dbOpen("bdd.db")
 	defer bdd.dbClose()
@@ -87,9 +87,8 @@ func main() {
 	studentsHandlers.InitializeStudentsRoutes(r)
 	LanguagesHandlers := new(LanguagesHandlers)
 	LanguagesHandlers.DAO = leLanguageDAO
-	LanguagesHandlers.InitializeLanguagesRoutes(r)
+	LanguagesHandlers.InitializeLanguagesRoutes(r)*/
 
-	//Route pour la documentation
 	fs := http.FileServer(http.Dir("./swagger"))
 	r.PathPrefix("/docs/").Handler(http.StripPrefix("/docs/", fs))
 
